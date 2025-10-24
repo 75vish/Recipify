@@ -1,6 +1,6 @@
 # Recipify: We help you find what you crave
 Recipify is an AI-powered web application that identifies food from an image and recommends the top 5 matching recipes with ingredients and cooking steps.  
-It combines computer vision (EfficientNet-B0) and semantic search (Sentence Transformers on RecipeNLG) to bridge the gap between what you see and what you can cook.
+It combines computer vision and semantic search to bridge the gap between what you see and what you can cook.
 
 ---
 
