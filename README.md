@@ -72,13 +72,10 @@ http://127.0.0.1:5000
 ---
 
 ## Demo Screenshots
-![Recipify Demo](images/Screenshot 2025-11-02 213205.png)
-
-![Recipify Demo](images/Screenshot 2025-11-02 213330.png)
-
-![Recipify Demo](images/Screenshot 2025-11-02 213352.png)
-
-![Recipify Demo](images/Screenshot 2025-11-02 213410.png)
+<img src="images/Screenshot 2025-11-02 213205.png" width="700"/>
+<img src="images/Screenshot 2025-11-02 213330.png" width="700"/>
+<img src="images/Screenshot 2025-11-02 213352.png" width="700"/>
+<img src="images/Screenshot 2025-11-02 213410.png" width="700"/>
 
 ---
 
