@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recipify - Recipes</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #fffaf5, #ffe6cc);
+            padding: 40px;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            color: #ff6600;
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        img.food-image {
+            width: 250px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .recipe {
+            background: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 20px;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.1);
+            width: 90%;
+            max-width: 600px;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .recipe:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 35px rgba(0,0,0,0.15);
+        }
+        h2 {
+            color: #ff6600;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+        h3 {
+            color: #ff7f33;
+            margin-bottom: 10px;
+            margin-top: 15px;
+        }
+        ul, ol {
+            padding-left: 25px;
+            margin-top: 0;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .back {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        .back button {
+            background-color: #ff6600;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .back button:hover {
+            background-color: #e65500;
+        }
+    </style>
+</head>
+<body>
+    <h1>Top 5 Recipe Matches</h1>
+
+    {% if image %}
+        <img src="{{ url_for('static', filename='uploads/' + image) }}" alt="Uploaded Food Image" class="food-image">
+    {% endif %}
+
+    {% for r in recipes %}
+        <div class="recipe">
+            <h2>{{ r.title }}</h2>
+            <h3>Ingredients:</h3>
+            <ul>
+                {% for i in r.ingredients %}
+                    <li>{{ i }}</li>
+                {% endfor %}
+            </ul>
+            <h3>Directions:</h3>
+            <ol>
+                {% for step in r.directions %}
+                    <li>{{ step }}</li>
+                {% endfor %}
+            </ol>
+        </div>
+    {% endfor %}
+
+    <div class="back">
+        <form action="/" method="get">
+            <button type="submit">Back to Home</button>
+        </form>
+    </div>
+</body>
+</html>
